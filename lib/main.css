@@ -28,12 +28,12 @@ header span {
   border-radius: 5px;
 }
 
-ul.square {
+/* ul.square {
   list-style-type: square;
   text-align: center;
   display: flex;
   justify-content: space-around;
-}
+} */
 
 #song-result {
   display: grid;
