@@ -46,7 +46,7 @@
 
 	'use strict';
 
-	var url = 'http://localhost:3000';
+	var url = 'https://infinite-stream-18484.herokuapp.com/';
 	var chosenArtist;
 	var userArtist = document.querySelector('#userArtist');
 	var name;
@@ -62,7 +62,7 @@
 
 	var fetchPostFavorite = function fetchPostFavorite(songDataFromButton) {
 	  // using fetch, send the JSON to the backend POST FAVORITE endpoint
-	  fetch('http://localhost:3000/api/v1/favorites', {
+	  fetch('https://infinite-stream-18484.herokuapp.com/api/v1/favorites', {
 	    method: 'POST',
 	    headers: { 'Content-Type': 'application/json' },
 	    body: JSON.stringify({
@@ -84,7 +84,7 @@
 	});
 
 	var getSongs = function getSongs() {
-	  fetch('http://localhost:3000/api/v1/search?q=' + chosenArtist, {
+	  fetch('https://infinite-stream-18484.herokuapp.com/api/v1/search?q=' + chosenArtist, {
 	    method: 'POST',
 	    headers: { 'Content-Type': 'application/json' },
 	    body: JSON.stringify({
@@ -135,7 +135,7 @@
 	});
 
 	var getFavorites = function getFavorites() {
-	  fetch('http://localhost:3000/api/v1/favorites').then(function (response) {
+	  fetch('https://infinite-stream-18484.herokuapp.com/api/v1/favorites').then(function (response) {
 	    return response.json();
 	  }).then(function (data) {
 	    return populateFavorites(data);
@@ -158,7 +158,7 @@
 	};
 
 	var getPlaylists = function getPlaylists() {
-	  fetch('http://localhost:3000/api/v1/playlists').then(function (response) {
+	  fetch('https://infinite-stream-18484.herokuapp.com/api/v1/playlists').then(function (response) {
 	    return response.json();
 	  }).then(function (data) {
 	    return populatePlaylists(data);
@@ -198,7 +198,7 @@
 
 	var addSongToPlaylist = function addSongToPlaylist(songData) {
 	  console.log(songData);
-	  fetch('http://localhost:3000//api/v1/playlists/:playlist_id/songs/:id', {
+	  fetch('https://infinite-stream-18484.herokuapp.com/api/v1/playlists/:playlist_id/songs/:id', {
 	    method: 'POST',
 	    headers: { 'Content-Type': 'application/json' },
 	    body: JSON.stringify({
