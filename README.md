@@ -1,54 +1,23 @@
-# Self-Directed Front-End Start Kit
+# Play
 
-## Initial Setup
+Play is a full-stack JS / Express music-themed CRUD application and a partner project for Module 4 Back End students at Turing School of Software & Design. The project introduces students to Express with a Postgres database, Node.js, and HTTP testing in these frameworks.
+ 
+Looking for our API back end? Visit [play-backend](https://github.com/clairebvs/play-backend).
+ 
+Play interfaces with the external API [Musixmatch](https://developer.musixmatch.com/) to populate songs by a searched artist, then allows the user to track favorite songs and add favorites to playlists.
 
-1. Clone this starter kit repository and rename the repository to anything you'd like in one command:
-
-  ```shell
-  git clone git@github.com:turingschool-projects/self-directed-fe-starter.git <name of your choice>
-  ```
-2. Change into the new director directory.
-
-3. Remove the default remote (origin):
-
-  ```shell
-  git remote rm origin
-  ```
-
-4. Create a new repository on GitHub.
-
-5. Add your new repository remote - **your remote URL and user name will be different in the command below**
-
-  ```shell
-  git remote add origin git@github.com:<YOUR GITHUB NAME>/<PROJECT NAME>.git
-  ```
-
-6. Install the dependencies of the starter kit:
-
-  ```shell
-  npm install
-  ```
-
-7. Add, commit, and push up to your repository:
-
-  ```shell
-  git add .
-  git commit -m "Initial commit using starter kit"
-  git push origin master
-  ```
+### Coming Soon: Setup
+#### edits needed to below
 
 ## Running the Server Locally
 
 To see your code in action locally, you need to fire up a development server. Use the command:
 
-```shell
-npm start
-```
+`npm start`
 
 Once the server is running, visit in your browser:
 
 * `http://localhost:8080/` to run your application.
-
 
 ## GitHub Pages Setup
 
@@ -70,6 +39,7 @@ Be sure to `npm run build` and commit before each push to master. A few seconds 
 
 
 ## Built With
+[Turing School of Software & Design Node.js Starter Kit](https://github.com/turingschool-projects/self-directed-fe-starter)
 
 * [JavaScript](https://www.javascript.com/)
 * [jQuery](https://jquery.com/)
