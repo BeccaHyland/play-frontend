@@ -28,15 +28,20 @@ header span {
   border-radius: 5px;
 }
 
-ul.square {
+/* ul.square {
   list-style-type: square;
   text-align: center;
   display: flex;
   justify-content: space-around;
-}
+} */
 
 #song-result {
   display: grid;
   flex-direction: column;
   justify-content: space-around;
+}
+
+#favorite-feedback {
+  text-align: center;
+  padding: 30px 30px;
 }
