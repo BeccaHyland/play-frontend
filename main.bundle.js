@@ -46,7 +46,7 @@
 
 	'use strict';
 
-	var url = 'https://infinite-stream-18484.herokuapp.com/';
+	var url = 'http://localhost:3000';
 	var chosenArtist;
 	var userArtist = document.querySelector('#userArtist');
 	var name;
@@ -62,7 +62,7 @@
 
 	var fetchPostFavorite = function fetchPostFavorite(songDataFromButton) {
 	  // using fetch, send the JSON to the backend POST FAVORITE endpoint
-	  fetch(url + '/api/v1/favorites', {
+	  fetch('http://localhost:3000/api/v1/favorites', {
 	    method: 'POST',
 	    headers: { 'Content-Type': 'application/json' },
 	    body: JSON.stringify({
@@ -84,7 +84,7 @@
 	});
 
 	var getSongs = function getSongs() {
-	  fetch(url + '/api/v1/search?q=' + chosenArtist, {
+	  fetch('http://localhost:3000/api/v1/search?q=' + chosenArtist, {
 	    method: 'POST',
 	    headers: { 'Content-Type': 'application/json' },
 	    body: JSON.stringify({
@@ -126,7 +126,7 @@
 	    bodyRows += '<button class="button-add-favorite" id= ' + row["name"].split(" ").join("-") + '">Add "' + row["name"] + '" to my Favorites</button></tr>';
 	  });
 
-	  return '<table class="' + classes + '"><thead><tr>' + headerRow + '</tr></thead><tbody>' + bodyRows + '</tbody></table>';
+	  return '<table id="search"' + classes + '"><thead><tr>' + headerRow + '</tr></thead><tbody>' + bodyRows + '</tbody></table>';
 	};
 
 	$('#artist-search-results').on('click', '.button-add-favorite', function () {
@@ -135,7 +135,7 @@
 	});
 
 	var getFavorites = function getFavorites() {
-	  fetch(url + '/api/v1/favorites').then(function (response) {
+	  fetch('http://localhost:3000/api/v1/favorites').then(function (response) {
 	    return response.json();
 	  }).then(function (data) {
 	    return populateFavorites(data);
@@ -153,12 +153,12 @@
 	    artist = data[x].artist_name;
 	    genre = data[x].genre;
 	    rating = data[x].song_rating;
-	    $('#user-favorites').append('<tr>\n    <td class=\'favorite-name\'>' + name + '</td>\n    <td class=\'favorite-artist-name\'>' + artist + ' </td>\n    <td class=\'favorite-genre\'>' + genre + ' </td>\n    <td class=\'favorite-song-rating\'>' + rating + ' </td>\n    <td class=\'favorite-to-playlist\'>\n    <div class="dropdown">\n    <button class="dropbtn">Add To Playlist</button>\n    <div class="dropdown-content">\n    <a href="#" id=\'id\' class=\'dropdown-link\'> </a>\n  </div>\n</div> </td>\n  </tr>');
+	    $('#favorites').append('<tr>\n    <td class=\'favorite-name\'>' + name + '</td>\n    <td class=\'favorite-artist-name\'>' + artist + ' </td>\n    <td class=\'favorite-genre\'>' + genre + ' </td>\n    <td class=\'favorite-song-rating\'>' + rating + ' </td>\n    <td class=\'favorite-to-playlist\'>\n    <div class="dropdown">    <button class="dropbtn">Add To Playlist</button> </div>\n    </td>\n  </tr>');
 	  }
 	};
 
 	var getPlaylists = function getPlaylists() {
-	  fetch(url + '/api/v1/playlists').then(function (response) {
+	  fetch('http://localhost:3000/api/v1/playlists').then(function (response) {
 	    return response.json();
 	  }).then(function (data) {
 	    return populatePlaylists(data);
@@ -173,11 +173,10 @@
 	        x = _ref4 === undefined ? 0 : _ref4;
 
 	    var playlistName = data[x].playlist_name;
-	    var ranking = data[x].ranking;
+	    var ranking = Math.round(data[x].ranking);
 	    var id = data[x].id;
-	    $('#user-playlists').append('<tr>\n    <td id=\'' + id + '\' class=\'playlist-name\'> ' + playlistName + '<button class=\'playlist-show-button\'>Check Songs</button></td>\n    <td class=\'playlist-ranking\'>' + ranking + ' </td>\n  </tr>');
+	    $('#playlists').append('<tr>\n    <td id=\'' + id + '\' class=\'playlist-name\'> ' + playlistName + '<button class=\'playlist-show-button\'>Check Songs</button></td>\n    <td class=\'playlist-ranking\'>' + ranking + ' </td>\n  </tr>');
 	  }
-	  populateAddPlaylist(data);
 	};
 
 	var populateAddPlaylist = function populateAddPlaylist(data) {
@@ -187,16 +186,29 @@
 
 	    var playlistName = data[x].playlist_name;
 	    var id = data[x].id;
-	    $('.dropdown-content').append('<a href="" id=\'' + id + '\' class=\'dropdown-link\'>' + playlistName + '</a></br>');
+	    $('.dropdown-content').append('<a href="" id=\'' + id + '\' class=\'dropdown-link-' + id + '\'>' + playlistName + '</a></br>');
+
+	    $('.dropdown-content').on('click', '.dropdown-link-' + id, function () {
+	      console.log("------------------HERE----------------");
+	      var songData = this.parentElement.parentElement.childNodes;
+	      addSongToPlaylist(songData);
+	    });
 	  }
 	};
 
-	$('.dropdown-link').on('click', function () {
-	  var songData = this.parentElement.childNodes;
+	var addSongToPlaylist = function addSongToPlaylist(songData) {
 	  console.log(songData);
-	  fetchPostFavorite(songData);
-	});
+	  fetch('http://localhost:3000//api/v1/playlists/:playlist_id/songs/:id', {
+	    method: 'POST',
+	    headers: { 'Content-Type': 'application/json' },
+	    body: JSON.stringify({
+	      'favorite_id': songData[0].innerHTML.id,
+	      'playlist_id': songData[2].innerHTML.id
+	    })
+	  });
+	};
 
+	populateAddPlaylist();
 	getPlaylists();
 	getFavorites();
 
