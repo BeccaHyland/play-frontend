@@ -17,9 +17,9 @@ body {
 }
 
 .play-icon {
-  text-align: left;
-  height: 50px;
-  width: 80px;
+  text-align: right;
+  height: 60px;
+  width: 60px;
 }
 
 .search-form {
