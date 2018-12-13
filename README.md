@@ -10,7 +10,7 @@ Looking for our API back end? Visit [play-backend](https://github.com/clairebvs/
  
 Play interfaces with the external API [Musixmatch](https://developer.musixmatch.com/) to populate songs by a searched artist, then allows the user to track favorite songs and add favorites to playlists.
 
-<img width="1440" alt="screen shot 2018-12-13 at 7 23 12 am" src="https://user-images.githubusercontent.com/39714935/49944631-1bd98080-fea8-11e8-9f28-0756a0f6149c.png">
+<img width="1169" alt="screen shot 2018-12-13 at 11 43 53 am" src="https://user-images.githubusercontent.com/39714935/49960067-856b8600-fecc-11e8-934a-2df0482cb2fd.png">
 
 ## Setup
 1. Clone this repo
