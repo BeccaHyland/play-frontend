@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Play</title>
+    <link rel="stylesheet" type='text/css' href="lib/main.css">
+    <link rel="stylesheet" type='text/css' href="lib/reset.css">
+  </head>
+  <body>
+
+  <div class='all-songs-of-playlist'>
+    <h1>Title</h1>
+    <h1>Artist Name</h1>
+    <h1>Genre</h1>
+    <h1>Song Rating</h1>
+  </div>
+
+  <script>
+  const goToPlaylistShow = (id) => {
+    console.log('----------------------------')
+    var id = window.location.search.replace(/[^\w*]/g," ")
+    var url = `http://localhost:3000/api/v1/playlists/${id}/songs`
+    fetch(`url`)
+    console.log(response)
+      .then(response => response.json())
+      .then(data => populatePlaySong(data))
+      .catch(error => console.error({error}));
+  }
+
+  const populatePlaySong = (data) => {
+    console.log(data)
+      var title = data.name;
+      var artist = data.artist_name;
+      var genre = data.genre;
+      var rating = data.song_rating
+    $('.all-songs-of-playlist').append(`<h1>Title</h1>${title}
+    <h1>Artist Name</h1>${artist}
+    <h1>Genre</h1>${genre}
+    <h1>Song Rating</h1>${rating}`)
+};
+
+  goToPlaylistShow();
+
+  </script>
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*; child-src 'none';"> -->
+
+  <access origin="*"/>
+<allow-navigation href="*"/>
+
+  <script
+    src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'>
+  </script>
+  <script src="main.bundle.js"></script>
+  </body>
+</html>
