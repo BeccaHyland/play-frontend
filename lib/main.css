@@ -14,6 +14,7 @@ body {
   font-size: 60px;
   font-family: 'Racing Sans One', cursive;
   color: #FE5F55;
+  margin-left: 30px;
 }
 
 .play-icon {
@@ -66,4 +67,86 @@ body {
 
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
+}
+
+#favorites {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#favorites td, #favorites th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#favorites tr:nth-child(even){background-color: #CED0CE;}
+
+#favorites tr:hover {background-color: #C4D6B0;}
+
+#favorites th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #CED0CE;
+  color: #FE5F55;
+}
+
+#playlists {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#playlists td, #playlists th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#playlists tr:nth-child(even){background-color: #CED0CE;}
+
+#playlists tr:hover {background-color: #C4D6B0;}
+
+#playlists th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #CED0CE;
+  color: #FE5F55;
+}
+
+#search {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#search td, #search th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#search tr:nth-child(even){background-color: #CED0CE;}
+
+#search tr:hover {background-color: #C4D6B0;}
+
+#search th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #CED0CE;
+  color: #FE5F55;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+button {
+  border-radius: 5px;
+  background-color: #E8F7EE;
+}
+
+th {
+  text-decoration: underline;
 }
