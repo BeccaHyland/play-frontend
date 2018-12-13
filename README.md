@@ -1,6 +1,8 @@
 # Play
 
 Play is a full-stack JS / Express music-themed CRUD application and a partner project for Module 4 Back End students at Turing School of Software & Design. The project introduces students to Express with a Postgres database, Node.js, and HTTP testing in these frameworks.
+
+[Visit Play in production on GitHub Pages!](https://beccahyland.github.io/play-frontend/)
  
 Looking for our API back end? Visit [play-backend](https://github.com/clairebvs/play-backend).
  
