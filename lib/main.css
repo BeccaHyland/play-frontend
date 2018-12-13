@@ -67,3 +67,39 @@ body {
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 }
+
+#favorites {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#favorites td, #favorites th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#favorites tr:nth-child(even){background-color: #CED0CE;}
+
+#favorites tr:hover {background-color: #FFFFFF;}
+
+#favorites th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #CED0CE;
+  color: #FE5F55;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+button {
+  border-radius: 5px;
+  background-color: #E8F7EE;
+}
+
+th {
+  text-decoration: underline;
+}
