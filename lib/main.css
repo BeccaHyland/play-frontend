@@ -27,14 +27,6 @@ header span {
 #submit-artist {
   border-radius: 5px;
 }
-
-/* ul.square {
-  list-style-type: square;
-  text-align: center;
-  display: flex;
-  justify-content: space-around;
-} */
-
 #song-result {
   display: grid;
   flex-direction: column;
@@ -44,4 +36,11 @@ header span {
 #favorite-feedback {
   text-align: center;
   padding: 30px 30px;
+}
+
+#favorites-and-playlists {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
