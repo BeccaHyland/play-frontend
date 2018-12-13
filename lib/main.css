@@ -81,9 +81,32 @@ body {
 
 #favorites tr:nth-child(even){background-color: #CED0CE;}
 
-#favorites tr:hover {background-color: #FFFFFF;}
+#favorites tr:hover {background-color: #C4D6B0;}
 
 #favorites th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #CED0CE;
+  color: #FE5F55;
+}
+
+#playlists {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#playlists td, #playlists th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#playlists tr:nth-child(even){background-color: #CED0CE;}
+
+#playlists tr:hover {background-color: #C4D6B0;}
+
+#playlists th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
