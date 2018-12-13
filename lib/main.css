@@ -1,18 +1,25 @@
 header {
-  background-color: #404041;
+  background-color: #CED0CE;
   color: #E6E7E8;
-  font-weight: 300;
-  text-align: center;
-  font-size: 90px;
-  height: 50px;
+  height: 70px;
 }
 
-header span {
-  margin: 0;
-  position: absolute;
-  top: 4%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+body {
+  color: #FE5F55;
+  background-color: #381D2A;
+  font-family: 'Sriracha', cursive;
+}
+
+.app-title {
+  font-size: 60px;
+  font-family: 'Racing Sans One', cursive;
+  color: #FE5F55;
+}
+
+.play-icon {
+  text-align: left;
+  height: 50px;
+  width: 80px;
 }
 
 .search-form {
