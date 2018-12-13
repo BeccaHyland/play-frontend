@@ -114,6 +114,29 @@ body {
   color: #FE5F55;
 }
 
+#search {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#search td, #search th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#search tr:nth-child(even){background-color: #CED0CE;}
+
+#search tr:hover {background-color: #C4D6B0;}
+
+#search th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #CED0CE;
+  color: #FE5F55;
+}
+
 h1 {
   margin-bottom: 10px;
 }
